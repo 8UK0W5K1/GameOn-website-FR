@@ -44,5 +44,15 @@ function displayRegistered() {
 sendDataButton.addEventListener('click', displayRegistered);
 
 registerForm.addEventListener('submit', (e) => {
-  e.preventDefault();
+  // e.preventDefault();
+});
+
+const isEmpty = (str) => !str.trim().length;
+
+document.getElementById('first').addEventListener('input', function () {
+  if (isEmpty(this.value)) {
+    console.log('NAME is invalid (Empty)');
+  } else {
+    console.log(`NAME value is: ${this.value}`);
+  }
 });
