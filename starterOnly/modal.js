@@ -36,7 +36,7 @@ function closeModal() {
 
 // display register modal after data send
 function displayRegistered() {
-  registerForm.style.display = 'none';
+  // registerForm.style.display = 'none';
 
   registeredUser.style.display = 'block';
 }
@@ -44,15 +44,35 @@ function displayRegistered() {
 sendDataButton.addEventListener('click', displayRegistered);
 
 registerForm.addEventListener('submit', (e) => {
-  // e.preventDefault();
+  e.preventDefault();
 });
 
-const isEmpty = (str) => !str.trim().length;
+// DOM FORM INPUTS & VALIDATIONS
+const form = document.querySelector('#form');
+const firstName = document.querySelector('#first');
+const lastName = document.querySelector('#last');
+const email = document.querySelector('#email');
+const birthdate = document.querySelector('#birthdate');
+const quantity = document.querySelector('#quantity');
+const locations = document.querySelector('#locations');
+const userConditions = document.querySelector('#checkbox1');
 
-document.getElementById('first').addEventListener('input', function () {
-  if (isEmpty(this.value)) {
-    console.log('NAME is invalid (Empty)');
-  } else {
-    console.log(`NAME value is: ${this.value}`);
-  }
-});
+// REGEX for VALIDATIONS
+// with a-z A-Z with accents, at least 2 chars
+const fullNameRegex =
+  /^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ]{2,}$/;
+//common emailRegex
+// const emailRegex = /\S+@\S+\.\S+/;
+const emailRegex = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/;
+// max 99
+const rangeRegex = /^[1-9]?[0-9]{1,1}$/;
+
+// const isEmpty = (str) => !str.trim().length;
+
+// document.getElementById('first').addEventListener('input', function () {
+//   if (isEmpty(this.value)) {
+//     console.log('NAME is invalid (Empty)');
+//   } else {
+//     console.log(`NAME value is: ${this.value}`);
+//   }
+// });
