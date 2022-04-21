@@ -54,9 +54,10 @@
 
       <div class="bground">
         <div class="content">
-          <span class="close"></span>
+          <span class="cross close"></span>
           <div class="modal-body">
-            <form
+            <form 
+              id="form"
               name="reserve"
               action="index.html"
               method="get"
@@ -201,12 +202,17 @@
                 <br>
               </div>
               <input
-                class="btn-submit"
+                class="btn-submit send"
                 type="submit"
                 class="button"
                 value="C'est parti"
               />
             </form>
+            <form id="registered" class="register" action="">
+            <span class="close"></span>
+            <p>Merci pour votre inscription</p>
+            <input id="fermerBtn" class="btn-submit button" type="submit" value="fermer">
+          </form>
           </div>
         </div>
       </div>
