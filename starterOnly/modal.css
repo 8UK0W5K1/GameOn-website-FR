@@ -539,6 +539,14 @@ footer {
   font-size: 36px;
 }
 
-#fermerBtn {
+#closeBtn {
   margin-top: 22em;
+}
+.formData.error small {
+  font-family: roboto;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14.25px;
+  color: #ff4e60;
+  text-align: left !important;
 }
